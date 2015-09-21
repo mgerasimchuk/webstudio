@@ -7,20 +7,20 @@ class m150921_104849_rename_tables_fields extends Migration
 {
     public function up()
     {
-        $this->renameColumn('user', 'authKey', 'authKey');
-        $this->renameColumn('user', 'passwordHash', 'passwordHash');
-        $this->renameColumn('user', 'passwordResetToken', 'passwordResetToken');
-        $this->renameColumn('user', 'createdAt', 'createdAt');
-        $this->renameColumn('user', 'updatedAt', 'updatedAt');
+        $this->renameColumn('user', 'auth_key', 'authKey');
+        $this->renameColumn('user', 'password_hash', 'passwordHash');
+        $this->renameColumn('user', 'password_reset_token', 'passwordResetToken');
+        $this->renameColumn('user', 'created_at', 'createdAt');
+        $this->renameColumn('user', 'updated_at', 'updatedAt');
     }
 
     public function down()
     {
-        $this->renameColumn('user', 'authKey', 'authKey');
-        $this->renameColumn('user', 'passwordHash', 'passwordHash');
-        $this->renameColumn('user', 'passwordResetToken', 'passwordResetToken');
-        $this->renameColumn('user', 'createdAt', 'createdAt');
-        $this->renameColumn('user', 'updatedAt', 'updatedAt');
+        $this->renameColumn('user', 'authKey', 'auth_key');
+        $this->renameColumn('user', 'passwordHash', 'password_hash');
+        $this->renameColumn('user', 'passwordResetToken', 'password_reset_token');
+        $this->renameColumn('user', 'createdAt', 'created_at');
+        $this->renameColumn('user', 'updatedAt', 'updated_at');
     }
 
     /*
