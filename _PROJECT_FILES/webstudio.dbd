@@ -228,10 +228,33 @@
             </Location>
             <Size>
               <Width>201 px</Width>
-              <Height>265 px</Height>
+              <Height>248 px</Height>
             </Size>
             <DbOid>
               <Path>webstudio.team_member</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>False</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>11</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>270 px</X>
+              <Y>-220 px</Y>
+            </Location>
+            <Size>
+              <Width>178 px</Width>
+              <Height>180 px</Height>
+            </Size>
+            <DbOid>
+              <Path>webstudio.partner</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -246,7 +269,7 @@
           <Scale>0.87</Scale>
           <Location>
             <X>-545.287368276473 px</X>
-            <Y>-252.873568007552 px</Y>
+            <Y>-268.505752990734 px</Y>
           </Location>
         </ViewPort>
       </Model>

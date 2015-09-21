@@ -20,7 +20,7 @@ class m150921_104849_rename_tables_fields extends Migration
         $this->renameColumn('user', 'passwordHash', 'password_hash');
         $this->renameColumn('user', 'passwordResetToken', 'password_reset_token');
         $this->renameColumn('user', 'createdAt', 'created_at');
-        $this->renameColumn('user', 'updatedAt', 'updated_at');
+        $this->renameColumn('user', '', 'updated_at');
     }
 
     /*
