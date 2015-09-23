@@ -4,7 +4,8 @@
 /* @var $content string */
 
 use yii\helpers\Html;
-use app\widgets\Body;
+use app\widgets\Header;
+use app\widgets\LeftMenu;
 
 $asset = backend\assets\AppAsset::register($this);
 $baseUrl = $asset->baseUrl;
@@ -24,11 +25,20 @@ $baseUrl = $asset->baseUrl;
 <?php $this->beginBody() ?>
 
 <div class="wrap">
-    <?echo Body::widget([
+    <?
+    echo Header::widget([
         'isGuest' => Yii::$app->user->isGuest,
-        'baseUrl' => $baseUrl,
-        'content' => $content
+        'baseUrl' => $baseUrl
     ])?>
+    <?
+    echo LeftMenu::widget([
+        'isGuest' => Yii::$app->user->isGuest,
+        'baseUrl' => $baseUrl
+    ])?>
+
+    <?= $this->render('content', ['content' => $content]) ?>
+    <?= $this->render('footer', ['baseUrl' => $baseUrl]) ?>
+
     <div class="control-sidebar-bg"></div>
 </div>
 
