@@ -51,15 +51,16 @@ class PartnerController extends Controller
     {
         $model = new Partner();
 
-        /*if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else*/
         if (Yii::$app->request->isPost) {
             $model->file = UploadedFile::getInstance($model, 'file');
 
             if ($model->file && $model->validate()) {
                 $model->file->saveAs('images/' . $model->file->baseName . '.' . $model->file->extension);
             }
+        }
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('create', ['model' => $model]);
