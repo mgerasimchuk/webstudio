@@ -14,18 +14,6 @@ use yii\filters\VerbFilter;
  */
 class ProjectController extends Controller
 {
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['post'],
-                ],
-            ],
-        ];
-    }
-
     /**
      * Lists all Project models.
      * @return mixed

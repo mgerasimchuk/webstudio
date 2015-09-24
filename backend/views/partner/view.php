@@ -35,6 +35,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'createdAt',
             'updatedAt',
         ],
-    ]) ?>
+    ]) ;
+    echo $model->getImageFileUrl('picture');
+    ?>
+
 
 </div>

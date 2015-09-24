@@ -8,24 +8,13 @@ use backend\models\PartnerSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * PartnerController implements the CRUD actions for Partner model.
  */
 class PartnerController extends Controller
 {
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['post'],
-                ],
-            ],
-        ];
-    }
-
     /**
      * Lists all Partner models.
      * @return mixed
@@ -62,13 +51,18 @@ class PartnerController extends Controller
     {
         $model = new Partner();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        /*if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
+        } else*/
+        if (Yii::$app->request->isPost) {
+            $model->file = UploadedFile::getInstance($model, 'file');
+
+            if ($model->file && $model->validate()) {
+                $model->file->saveAs('images/' . $model->file->baseName . '.' . $model->file->extension);
+            }
         }
+
+        return $this->render('create', ['model' => $model]);
     }
 
     /**

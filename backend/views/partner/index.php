@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\PartnerSearch */
@@ -19,6 +20,8 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Create Partner', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
+
+
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -35,5 +38,8 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
+
+
+
 
 </div>

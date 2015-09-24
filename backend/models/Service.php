@@ -3,7 +3,8 @@
 namespace app\models;
 
 use Yii;
-
+use yii\behaviors\TimestampBehavior;
+use yiidreamteam\upload;
 /**
  * This is the model class for table "service".
  *

@@ -14,18 +14,6 @@ use yii\filters\VerbFilter;
  */
 class ProjectCategoryController extends Controller
 {
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['post'],
-                ],
-            ],
-        ];
-    }
-
     /**
      * Lists all ProjectCategory models.
      * @return mixed

@@ -14,18 +14,6 @@ use yii\filters\VerbFilter;
  */
 class ServiceController extends Controller
 {
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['post'],
-                ],
-            ],
-        ];
-    }
-
     /**
      * Lists all Service models.
      * @return mixed

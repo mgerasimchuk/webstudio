@@ -6,6 +6,7 @@ use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use app\models\Service;
+use yiidreamteam\upload;
 
 /**
  * ServiceSearch represents the model behind the search form about `app\models\Service`.
@@ -19,7 +20,7 @@ class ServiceSearch extends Service
     {
         return [
             [['id'], 'integer'],
-            [['name', 'description', 'picture', 'createdAt', 'updatedAt'], 'safe'],
+            [['name', 'description', 'picture', 'createdAt', 'updatedAt'], 'safe']
         ];
     }
 
