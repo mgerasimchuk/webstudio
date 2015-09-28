@@ -28,6 +28,20 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+        ],
+        'view' => [
+            'theme' => [
+                'pathMap' => [
+                    '@frontend/views' => '@frontend/themes/agency',
+                    '@frontend/views/layouts' => '@frontend/themes/agency/layouts',
+                    //'@frontend/modules' => '@frontend/themes/default',
+                    'baseUrl' => '@backend/themes/agency',
+                ],
+            ],
+        ],
     ],
     'params' => $params,
 ];

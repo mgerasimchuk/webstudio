@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Partner */
+/* @var $model common\models\Partner */
 
 $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Partners', 'url' => ['index']];
@@ -36,7 +36,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'updatedAt',
         ],
     ]) ;
-    echo $model->getImageFileUrl('picture');
     ?>
 
 

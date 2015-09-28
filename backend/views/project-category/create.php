@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model app\models\ProjectCategory */
+/* @var $model common\models\ProjectCategory */
 
 $this->title = 'Create Project Category';
 $this->params['breadcrumbs'][] = ['label' => 'Project Categories', 'url' => ['index']];

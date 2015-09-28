@@ -7,18 +7,18 @@ class m150922_013809_create_project_table extends Migration
 {
     public function up()
     {
-        $this->createTable('project', [
-            'id' => Schema::TYPE_PK,
-            'name' => Schema::TYPE_STRING,
-            'description' => Schema::TYPE_STRING,
-            'note' => Schema::TYPE_STRING,
-            'picture' => Schema::TYPE_STRING,
-            'createdAt' => Schema::TYPE_DATETIME,
-            'updatedAt' => Schema::TYPE_DATETIME,
-            'categoryId' =>Schema::TYPE_INTEGER,
+        $this->createTable('{{%project}}', [
+            'id' => $this->primaryKey(),
+            'name' => $this->string()->notNull(),
+            'description' => $this->string()->notNull(),
+            'note' => $this->string()->notNull(),
+            'picture' => $this->string()->notNull(),
+            'createdAt' => $this->dateTime()->notNull(),
+            'updatedAt' => $this->dateTime()->notNull(),
+            'categoryId' => $this->integer()->notNull(),
         ]);
 
-        $this->addForeignKey('FK_project_categoryId', 'project', 'categoryId', 'project_category', 'id');
+        $this->addForeignKey('FK_project_categoryId', '{{%project}}', 'categoryId', '{{%project_category}}', 'id');
     }
 
     public function down()

@@ -30,8 +30,7 @@
                         </li>
                         <!-- Menu Footer-->
                         <li class="user-footer">
-                           <a href="/backend/web/index.php?r=site%2Flogout" data-method="post" class="btn btn-default btn-flat">Sign out</a>
-                            <!--<a href="/backend/web/index.php?r=site%2Flogout" data-method="post">-->
+                            <?= yii\helpers\Html::a("Sign out", ['site/logout'], ['data-method' => 'post', 'class' => 'btn btn-default btn-flat'])?>
                         </li>
                     </ul>
                 </li>

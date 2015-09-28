@@ -7,23 +7,23 @@ class m150922_012406_create_team_member_table extends Migration
 {
     public function up()
     {
-        $this->createTable('team_member', [
-            'id' => Schema::TYPE_PK,
-            'firstName' => Schema::TYPE_STRING,
-            'lastName' => Schema::TYPE_STRING,
-            'position' => Schema::TYPE_STRING,
-            'picture' => Schema::TYPE_STRING,
-            'socialTwitter' => Schema::TYPE_STRING,
-            'socialFacebook' => Schema::TYPE_STRING,
-            'socialLinkedIn' => Schema::TYPE_STRING,
-            'createdAt' => Schema::TYPE_DATETIME,
-            'updatedAt' => Schema::TYPE_DATETIME,
+        $this->createTable('{{%team_member}}', [
+            'id' => $this->primaryKey(),
+            'firstName' => $this->string()->notNull(),
+            'lastName' => $this->string()->notNull(),
+            'position' => $this->string()->notNull(),
+            'picture' => $this->string()->notNull(),
+            'socialTwitter' => $this->string()->notNull(),
+            'socialFacebook' => $this->string()->notNull(),
+            'socialLinkedIn' => $this->string()->notNull(),
+            'createdAt' => $this->dateTime()->notNull(),
+            'updatedAt' => $this->dateTime()->notNull(),
         ]);
     }
 
     public function down()
     {
-        $this->dropTable('service');
+        $this->dropTable('{{%team_member}}');
     }
 
     /*

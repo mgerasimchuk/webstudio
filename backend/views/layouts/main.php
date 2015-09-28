@@ -4,8 +4,8 @@
 /* @var $content string */
 
 use yii\helpers\Html;
-use app\widgets\Header;
-use app\widgets\LeftMenu;
+use backend\widgets\Header;
+use backend\widgets\LeftMenu;
 
 $asset = backend\assets\AppAsset::register($this);
 $baseUrl = $asset->baseUrl;
@@ -37,7 +37,7 @@ $baseUrl = $asset->baseUrl;
     ])?>
 
     <?= $this->render('content', ['content' => $content]) ?>
-    <?= $this->render('footer', ['baseUrl' => $baseUrl]) ?>
+    <?= $this->render('footer') ?>
 
     <div class="control-sidebar-bg"></div>
 </div>

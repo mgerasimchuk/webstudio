@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\ProjectCategory */
+/* @var $model common\models\ProjectCategory */
 
 $this->title = 'Update Project Category: ' . ' ' . $model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Project Categories', 'url' => ['index']];

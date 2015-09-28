@@ -3,11 +3,12 @@
 namespace backend\controllers;
 
 use Yii;
-use app\models\Service;
-use backend\models\ServiceSearch;
+use common\models\Service;
+use common\models\ServiceSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * ServiceController implements the CRUD actions for Service model.
@@ -50,13 +51,23 @@ class ServiceController extends Controller
     {
         $model = new Service();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
+        if (Yii::$app->request->isPost) {
+            $model->file = UploadedFile::getInstance($model, 'file');
+
+            if ($model->file && $model->validate()) {
+                $dir = Yii::getAlias('@frontend/web/img/service/');
+                $fileName = Yii::$app->security->generateRandomString() . '.' . $model->file->extension;
+                $model->file->saveAs($dir . $fileName);
+                $model->picture = 'img/service/' . $fileName;
+            }
         }
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
+            return $this->redirect(['view', 'id' => $model->id]);
+        }
+
+        return $this->render('create', ['model' => $model]);
     }
 
     /**

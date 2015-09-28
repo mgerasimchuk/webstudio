@@ -3,8 +3,8 @@
 namespace backend\controllers;
 
 use Yii;
-use app\models\Partner;
-use backend\models\PartnerSearch;
+use common\models\Partner;
+use common\models\PartnerSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -55,11 +55,15 @@ class PartnerController extends Controller
             $model->file = UploadedFile::getInstance($model, 'file');
 
             if ($model->file && $model->validate()) {
-                $model->file->saveAs('images/' . $model->file->baseName . '.' . $model->file->extension);
+                $dir = Yii::getAlias('@frontend/web/img/partners/');
+                $fileName = Yii::$app->security->generateRandomString() . '.' . $model->file->extension;
+                $model->file->saveAs($dir . $fileName);
+                $model->picture = 'img/partners/' . $fileName;
             }
         }
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
             return $this->redirect(['view', 'id' => $model->id]);
         }
 

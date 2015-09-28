@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\ProjectCategory */
+/* @var $model common\models\ProjectCategory */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
@@ -14,9 +14,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'createdAt')->textInput() ?>
+    <?/*= $form->field($model, 'createdAt')->textInput() */?>
 
-    <?= $form->field($model, 'updatedAt')->textInput() ?>
+    <?/*= $form->field($model, 'updatedAt')->textInput() */?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

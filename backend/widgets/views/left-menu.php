@@ -32,14 +32,15 @@
 
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="/backend/web/index.php?r=service%2Findex" data-method="post"><i class="fa fa-circle-o"></i> Services</a></li>
-                    <li><a href="/backend/web/index.php?r=project-category%2Findex" data-method="post"><i class="fa fa-circle-o"></i> Projects Category</a></li>
-                    <li><a href="/backend/web/index.php?r=project%2Findex" data-method="post"><i class="fa fa-circle-o"></i> Projects</a></li>
-                    <li><a href="/backend/web/index.php?r=team-member%2Findex" data-method="post"><i class="fa fa-circle-o"></i> Team Members</a></li>
-                    <li><a href="/backend/web/index.php?r=partner%2Findex" data-method="post"><i class="fa fa-circle-o"></i> Partners</a></li>
+                    <li><?= yii\helpers\Html::a(" Service", ['service/index'], ['data-method' => 'post'])?><i class="fa fa-circle-o"></i></li>
+                    <li><?= yii\helpers\Html::a(" Project Category", ['project-category/index'], ['data-method' => 'post'])?><i class="fa fa-circle-o"></i></li>
+                    <li><?= yii\helpers\Html::a(" Projects", ['project/index'], ['data-method' => 'post'])?><i class="fa fa-circle-o"></i></li>
+                    <li><?= yii\helpers\Html::a(" About", ['about/index'], ['data-method' => 'post'])?><i class="fa fa-circle-o"></i></li>
+                    <li><?= yii\helpers\Html::a(" Team Members", ['team-member/index'], ['data-method' => 'post'])?><i class="fa fa-circle-o"></i></li>
+                    <li><?= yii\helpers\Html::a(" Partners", ['partner/index'], ['data-method' => 'post'])?><i class="fa fa-circle-o"></i></li>
                 </ul>
             </li>
-            <li class="treeview">
+           <!-- <li class="treeview">
                 <a href="#">
                     <i class="fa fa-files-o"></i>
                     <span>Layout Options</span>
@@ -157,11 +158,9 @@
                     <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
                 </ul>
             </li>
-            <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+            <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>-->
             <li class="header">LABELS</li>
-            <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-            <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-            <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+            <li><?= yii\helpers\Html::a(" Sign out", ['site/logout'], ['data-method' => 'post'])?><i class="fa fa-circle-o text-red"></i></li>
         </ul>
     </section>
     <!-- /.sidebar -->

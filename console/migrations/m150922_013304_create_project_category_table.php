@@ -7,17 +7,17 @@ class m150922_013304_create_project_category_table extends Migration
 {
     public function up()
     {
-        $this->createTable('project_category', [
-            'id' => Schema::TYPE_PK,
-            'name' => Schema::TYPE_STRING,
-            'createdAt' => Schema::TYPE_DATETIME,
-            'updatedAt' => Schema::TYPE_DATETIME,
+        $this->createTable('{{%project_category}}', [
+            'id' => $this->primaryKey(),
+            'name' => $this->string()->notNull(),
+            'createdAt' => $this->dateTime()->notNull(),
+            'updatedAt' => $this->dateTime()->notNull(),
         ]);
     }
 
     public function down()
     {
-        $this->dropTable('project_category');
+        $this->dropTable('{{%project_category}}');
     }
 
     /*

@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Partner */
+/* @var $model common\models\Partner */
 
 $this->title = 'Create Partner';
 $this->params['breadcrumbs'][] = ['label' => 'Partners', 'url' => ['index']];

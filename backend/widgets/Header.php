@@ -1,6 +1,6 @@
 <?php
 
-namespace app\widgets;
+namespace backend\widgets;
 
 use yii\base\Widget;
 
@@ -35,7 +35,7 @@ class Header extends Widget
     public function run()
     {
         if ($this->isGuest) {
-            return $this->render('header-guest', ['baseUrl' => $this->baseUrl]);
+            return $this->render('header-guest');
         } else {
             return $this->render('header', ['baseUrl' => $this->baseUrl]);
         }

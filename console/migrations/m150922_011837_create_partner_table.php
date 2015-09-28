@@ -7,19 +7,19 @@ class m150922_011837_create_partner_table extends Migration
 {
     public function up()
     {
-        $this->createTable('partner', [
-            'id' => Schema::TYPE_PK,
-            'name' => Schema::TYPE_STRING,
-            'picture' => Schema::TYPE_STRING,
-            'link' => Schema::TYPE_STRING,
-            'createdAt' => Schema::TYPE_DATETIME,
-            'updatedAt' => Schema::TYPE_DATETIME,
+        $this->createTable('{{%partner}}', [
+            'id' => $this->primaryKey(),
+            'name' => $this->string()->notNull(),
+            'picture' => $this->string()->notNull(),
+            'link' => $this->string()->notNull(),
+            'createdAt' => $this->dateTime()->notNull(),
+            'updatedAt' => $this->dateTime()->notNull(),
         ]);
     }
 
     public function down()
     {
-        $this->dropTable('partner');
+        $this->dropTable('{{%partner}}');
     }
 
     /*

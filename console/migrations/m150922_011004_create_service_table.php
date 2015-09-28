@@ -7,20 +7,20 @@ class m150922_011004_create_service_table extends Migration
 {
     public function up()
     {
-        $this->createTable('service', [
-            'id' => Schema::TYPE_PK,
-            'name' => Schema::TYPE_STRING,
-            'description' => Schema::TYPE_STRING,
-            'picture' => Schema::TYPE_STRING,
-            'createdAt' => Schema::TYPE_DATETIME,
-            'updatedAt' => Schema::TYPE_DATETIME,
+        $this->createTable('{{%service}}', [
+            'id' => $this->primaryKey(),
+            'name' => $this->string()->notNull(),
+            'description' => $this->text()->notNull(),
+            'picture' => $this->string()->notNull(),
+            'createdAt' => $this->dateTime()->notNull(),
+            'updatedAt' => $this->dateTime()->notNull(),
         ]);
 
     }
 
     public function down()
     {
-        $this->dropTable('service');
+        $this->dropTable('{{%service}}');
     }
 
     /*

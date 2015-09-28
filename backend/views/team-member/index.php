@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel backend\models\TeamMemberSearch */
+/* @var $searchModel common\models\TeamMemberSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Team Members';
@@ -29,12 +29,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'firstName',
             'lastName',
             'position',
-            'picture',
-            // 'socialTwitter',
-            // 'socialFacebook',
-            // 'socialLinkedIn',
-            // 'createdAt',
-            // 'updatedAt',
+            'picture:url',
+            'socialTwitter:url',
+            'socialFacebook:url',
+            'socialLinkedIn:url',
+            'createdAt',
+            'updatedAt',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

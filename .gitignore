@@ -1,9 +1,6 @@
 # yii console command
 /yii
 
-# trash
-/_PROJECT_FILES
-
 # phpstorm project files
 .idea
 

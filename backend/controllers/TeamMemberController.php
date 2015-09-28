@@ -3,11 +3,12 @@
 namespace backend\controllers;
 
 use Yii;
-use app\models\TeamMember;
-use backend\models\TeamMemberSearch;
+use common\models\TeamMember;
+use common\models\TeamMemberSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * TeamMemberController implements the CRUD actions for TeamMember model.
@@ -62,13 +63,23 @@ class TeamMemberController extends Controller
     {
         $model = new TeamMember();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
+        if (Yii::$app->request->isPost) {
+            $model->file = UploadedFile::getInstance($model, 'file');
+
+            if ($model->file && $model->validate()) {
+                $dir = Yii::getAlias('@frontend/web/img/team/');
+                $fileName = Yii::$app->security->generateRandomString() . '.' . $model->file->extension;
+                $model->file->saveAs($dir . $fileName);
+                $model->picture = 'img/team/' . $fileName;
+            }
         }
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
+            return $this->redirect(['view', 'id' => $model->id]);
+        }
+
+        return $this->render('create', ['model' => $model]);
     }
 
     /**
