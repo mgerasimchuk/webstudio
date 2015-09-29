@@ -10,12 +10,12 @@ use yii\web\UploadedFile;
 /**
  * This is the model class for table "service".
  *
- * @property integer $id - дентификатор
- * @property string $name - наименование
- * @property string $description - описание
- * @property string $picture - лого
- * @property string $createdAt - дата/время создания
- * @property string $updatedAt - дата/время изменения
+ * @property integer $id - РґРµРЅС‚РёС„РёРєР°С‚РѕСЂ
+ * @property string $name - РЅР°РёРјРµРЅРѕРІР°РЅРёРµ
+ * @property string $description - РѕРїРёСЃР°РЅРёРµ
+ * @property string $picture - Р»РѕРіРѕ
+ * @property string $createdAt - РґР°С‚Р°/РІСЂРµРјСЏ СЃРѕР·РґР°РЅРёСЏ
+ * @property string $updatedAt - РґР°С‚Р°/РІСЂРµРјСЏ РёР·РјРµРЅРµРЅРёСЏ
  */
 class Service extends Base
 {

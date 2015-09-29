@@ -7,10 +7,10 @@ use Yii;
 /**
  * This is the model class for table "project_category".
  *
- * @property integer $id - идентификатор
- * @property string $name - наименование категории
- * @property string $createdAt - дата/время создания
- * @property string $updatedAt - дата/время изменения
+ * @property integer $id - РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ
+ * @property string $name - РЅР°РёРјРµРЅРѕРІР°РЅРёРµ РєР°С‚РµРіРѕСЂРёРё
+ * @property string $createdAt - РґР°С‚Р°/РІСЂРµРјСЏ СЃРѕР·РґР°РЅРёСЏ
+ * @property string $updatedAt - РґР°С‚Р°/РІСЂРµРјСЏ РёР·РјРµРЅРµРЅРёСЏ
  *
  * @property Project[] $projects - TODO CREATE COMMENT
  */

@@ -8,16 +8,16 @@ use yii\web\UploadedFile;
 /**
  * This is the model class for table "project".
  *
- * @property integer $id - идентификатор
- * @property string $name - наименование
- * @property string $description - красткое описание
- * @property string $note - полное описание
- * @property string $picture - лого
- * @property string $createdAt - дата/время создания
- * @property string $updatedAt - дата время изменения
- * @property integer $categoryId - идентификатор категории
+ * @property integer $id - РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ
+ * @property string $name - РЅР°РёРјРµРЅРѕРІР°РЅРёРµ
+ * @property string $description - РєСЂР°СЃС‚РєРѕРµ РѕРїРёСЃР°РЅРёРµ
+ * @property string $note - РїРѕР»РЅРѕРµ РѕРїРёСЃР°РЅРёРµ
+ * @property string $picture - Р»РѕРіРѕ
+ * @property string $createdAt - РґР°С‚Р°/РІСЂРµРјСЏ СЃРѕР·РґР°РЅРёСЏ
+ * @property string $updatedAt - РґР°С‚Р° РІСЂРµРјСЏ РёР·РјРµРЅРµРЅРёСЏ
+ * @property integer $categoryId - РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ РєР°С‚РµРіРѕСЂРёРё
  *
- * @property ProjectCategory $category - категория проекта
+ * @property ProjectCategory $category - РєР°С‚РµРіРѕСЂРёСЏ РїСЂРѕРµРєС‚Р°
  */
 class Project extends Base
 {

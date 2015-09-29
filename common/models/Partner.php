@@ -9,12 +9,12 @@ use yii\web\UploadedFile;
 /**
  * This is the model class for table "partner".
  *
- * @property integer $id - идентификатор
- * @property string $name - имя
- * @property string $picture - лого
- * @property string $link - ссылка на сайт партнера
- * @property string $createdAt - дата/время создания
- * @property string $updatedAt - дата время изменения
+ * @property integer $id - РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ
+ * @property string $name - РёРјСЏ
+ * @property string $picture - Р»РѕРіРѕ
+ * @property string $link - СЃСЃС‹Р»РєР° РЅР° СЃР°Р№С‚ РїР°СЂС‚РЅРµСЂР°
+ * @property string $createdAt - РґР°С‚Р°/РІСЂРµРјСЏ СЃРѕР·РґР°РЅРёСЏ
+ * @property string $updatedAt - РґР°С‚Р° РІСЂРµРјСЏ РёР·РјРµРЅРµРЅРёСЏ
  */
 class Partner extends Base
 {
@@ -59,7 +59,7 @@ class Partner extends Base
     }
 
     /**
-     * Проставляем даты создания/изменения объектов
+     * РџСЂРѕСЃС‚Р°РІР»СЏРµРј РґР°С‚С‹ СЃРѕР·РґР°РЅРёСЏ/РёР·РјРµРЅРµРЅРёСЏ РѕР±СЉРµРєС‚РѕРІ
      * @return array
      */
     public function behaviors()

@@ -8,16 +8,16 @@ use yii\web\UploadedFile;
 /**
  * This is the model class for table "team_member".
  *
- * @property integer $id - идентификатор
- * @property string $firstName - имя
- * @property string $lastName - фамилия
- * @property string $position - должность
- * @property string $picture - аватар
- * @property string $socialTwitter - ссылка на twitter
- * @property string $socialFacebook - ссылка на facebook
- * @property string $socialLinkedIn - ссылка LinkedIn
- * @property string $createdAt - дата/время создания
- * @property string $updatedAt - дата/время изменения
+ * @property integer $id - РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ
+ * @property string $firstName - РёРјСЏ
+ * @property string $lastName - С„Р°РјРёР»РёСЏ
+ * @property string $position - РґРѕР»Р¶РЅРѕСЃС‚СЊ
+ * @property string $picture - Р°РІР°С‚Р°СЂ
+ * @property string $socialTwitter - СЃСЃС‹Р»РєР° РЅР° twitter
+ * @property string $socialFacebook - СЃСЃС‹Р»РєР° РЅР° facebook
+ * @property string $socialLinkedIn - СЃСЃС‹Р»РєР° LinkedIn
+ * @property string $createdAt - РґР°С‚Р°/РІСЂРµРјСЏ СЃРѕР·РґР°РЅРёСЏ
+ * @property string $updatedAt - РґР°С‚Р°/РІСЂРµРјСЏ РёР·РјРµРЅРµРЅРёСЏ
  */
 class TeamMember extends Base
 {

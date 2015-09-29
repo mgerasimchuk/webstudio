@@ -37,7 +37,6 @@ class About extends Base
     public function rules()
     {
         return [
-            //[['firstTitle', 'secondTitle', 'description', 'isShow'], 'required'],
             [['isShow'], 'integer'],
             [['firstTitle', 'secondTitle', 'description'], 'string', 'max' => 255],
             ['file', 'image'],

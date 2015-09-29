@@ -12,6 +12,11 @@ use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use common\models\Service;
+use common\models\Project;
+use common\models\About;
+use common\models\TeamMember;
+use common\models\Partner;
 
 /**
  * Site controller
@@ -72,7 +77,50 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        /**
+         * @var Service[] $services
+         */
+        $services = Service::find()->limit(3)->orderBy('RAND()')->all();
+
+        /**
+         * @var Project[] $portfolio
+         */
+        $portfolio = Project::find()->limit(6)->orderBy('RAND()')->all();
+
+        /**
+         * @var About[] $about
+         */
+        $about = About::find()->where(['isShow' => '1'])->all();
+
+        /**
+         * @var TeamMember[] $team
+         */
+        $team = TeamMember::find()->limit(3)->orderBy('RAND()')->all();
+
+        /**
+         * @var Partner[] $partners
+         */
+        $partners = Partner::find()->limit(4)->orderBy('RAND()')->all();
+
+        $model = new ContactForm();
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
+                //Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
+            } else {
+                //Yii::$app->session->setFlash('error', 'There was an error sending email.');
+            }
+
+            return $this->refresh();
+        }
+
+        return $this->render('index', [
+            'services' => $services,
+            'portfolio' => $portfolio,
+            'about' => $about,
+            'team' => $team,
+            'partners' => $partners,
+            'contact' => $model
+        ]);
     }
 
     /**
@@ -116,9 +164,11 @@ class SiteController extends Controller
     public function actionContact()
     {
         $model = new ContactForm();
+
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
+            if ($model->sendEmail('h28694@trbvm.com')) {
                 Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
+                Yii::info(Yii::$app->params['adminEmail']);
             } else {
                 Yii::$app->session->setFlash('error', 'There was an error sending email.');
             }
